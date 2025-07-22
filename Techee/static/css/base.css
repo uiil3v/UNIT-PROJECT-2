@@ -1,3 +1,185 @@
-h2 {
-    color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+header div form input:focus{
+        border-color: black !important;
+        outline: none;
+        box-shadow: none;
+    }
+
+footer a {
+    text-decoration: none;
+    color: black;
 }
+
+.a-options a {
+    font-size: 16px;
+}
+
+
+
+/* Header Media */
+
+
+
+@media (max-width: 880px){
+
+    header.container-fluid {
+        padding-inline: 5px !important;
+        padding-top: 0 !important;
+    }
+
+    header a h2{
+        font-size: 40px !important;
+    }
+
+    header div .a-options{
+        gap: 0 !important;
+        width: 350px;
+    }
+    header div .a-options a {
+        font-size: 14px !important;
+    }
+
+
+
+}
+
+@media (max-width:730px){
+    header div .a-options .about {
+        display: none;
+    }
+}
+
+/* ...existing code... */
+
+@media (max-width:590px){
+    header.container-fluid {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px 5px !important;
+        position: relative;
+    }
+
+    header .user-icon {
+        position: absolute;
+        top: 22px;
+        right: 12px;
+        z-index: 10;
+    }
+
+    header a h2 {
+        font-size: 35px !important;
+        margin-bottom: 10px;
+        margin-left: 3px;
+    }
+
+    .father {
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    header .father .a-options .about {
+        display: flex;
+    }
+    .a-options {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 1px !important;
+        width: 300px !important;
+        position: absolute;
+        top: 24px;
+        left: 160px;
+
+    }
+
+    header div .a-options a {
+        font-size: 13px !important;
+        padding: 2px 0;
+    }
+
+    form.col-4 {
+        width: 100% !important;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width:530px){
+
+    .a-options { 
+        width: 230px !important;
+    }
+
+    header .father .a-options .about {
+        display: none;
+    }
+
+}
+
+@media (max-width:460px){
+    .a-options { 
+        left: 140px;
+        width: 210px !important;
+    }
+
+    header div .a-options a {
+        font-size: 13px !important;
+        font-weight: 500;
+    }
+
+    header a h2 {
+        font-size: 30px !important;
+        margin-top: 3px;
+        
+    }
+
+}
+
+@media (max-width:420px){
+    .a-options { 
+        left: 140px;
+        width: 200px !important;
+    }
+
+}
+
+@media (max-width:400px){
+    .a-options { 
+        left: 125px;
+        width: 200px !important;
+    }
+
+}
+
+@media (max-width:400px){
+    .a-options { 
+        top: 65px;
+        left: 18px;
+        width: 90% !important;
+    }
+    form.col-4 {
+        width: 100% !important;
+        margin-top: 40px;
+    }
+
+    header .father .a-options .about {
+        display: flex;
+    }
+
+    header .user-icon {
+        position: absolute;
+        top: 17px;
+        right: 12px;
+        z-index: 10;
+    }
+
+}
+
+
+

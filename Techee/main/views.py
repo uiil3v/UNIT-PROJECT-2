@@ -4,7 +4,7 @@ from django.http import HttpRequest, HttpResponse
 
 # Home View
 def home_view (request: HttpRequest):
-    return render(request, "base.html")
+    return render(request, "main/index.html")
 
 # Home View
 def contact_view (request: HttpRequest):

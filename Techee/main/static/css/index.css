@@ -1,0 +1,201 @@
+
+/* Main 1 */
+
+.index-main .index-main-1{
+    background-color: rgb(244, 242, 242);
+    position: relative;
+    min-height: 89.5vh;
+    overflow: hidden;
+}
+
+.index-main .index-main-1 .macbook{
+    position: absolute;
+    width:300px;
+    z-index: 2;
+    width: 430px;
+}
+
+.index-main .index-main-1 .iphone {
+    position: absolute;
+    width: 600px;
+    right: 0px;
+    bottom: -150px;
+}
+
+.index-main .index-main-1 .texts {
+    position: absolute;
+    left: 45.5%;
+    transform: translateX(-50%);
+    top: 150px;
+    width: auto;
+    width: 600px;
+    z-index: 1;
+}
+
+.index-main .index-main-1 .texts h1 {
+    font-size: 80px;
+    width: 600px;
+    font-weight: 600;
+}
+
+.index-main .index-main-1 .texts p {
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.index-main .index-main-1 .texts a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+
+/* Main 2 */
+
+.index-main .index-main-2{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.index-main .index-main-2 div h1 {
+    font-weight: 700;
+}
+
+
+
+.index-main .index-main-2 div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-main .index-main-2 div a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+
+.index-main .index-main-2 .phones-div{
+    position: relative;
+    min-height: 21.25vh;
+    overflow: hidden;
+}
+
+
+.index-main .index-main-2 .phones-div img {
+    position: absolute;
+    right: 280px;
+    width: 500px;
+    top: 0;
+    z-index: 2;
+}
+
+.index-main .index-main-2 .phones-div a {
+    z-index: 3;
+}
+
+.index-main .index-main-2 .laptops-div{
+    position: relative;
+    min-height: 21.25vh;
+}
+
+.index-main .index-main-2 .laptops-div img {
+    position: absolute;
+    left: 320px;
+    width: 400px;
+    bottom: 0;
+}
+
+.index-main .index-main-2 .watches-div{
+    position: relative;
+    min-height: 21.25vh;
+
+}
+
+.index-main .index-main-2 .watches-div img {
+    position: absolute;
+    right: 430px;
+    width: 230px;
+    bottom: 0;
+}
+
+.index-main .index-main-2 .airpods-div{
+    position: relative;
+    min-height: 21.25vh;
+}
+
+.index-main .index-main-2 .airpods-div img {
+    position: absolute;
+    left: 450px;
+    width: 180px;
+    bottom: 0;
+}
+
+
+/* Main 3 */
+
+.index-main .index-main-3{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.index-main .index-main-3 h1 {
+    font-weight: 700;
+
+}
+
+.index-main .index-main-3 .cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 55px;
+    margin-top: 60px;
+    margin-bottom: 120px;
+}
+
+.index-main .index-main-3 .cards div{
+    width: 300px;
+    height: 280px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.index-main .index-main-3 .cards div h3 {
+    font-weight: 700;
+}
+
+.index-main .index-main-3 .cards div p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.index-main .index-main-3 .cards div img{
+    width: 100px;
+
+}

@@ -1,1 +1,94 @@
-nideix page
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block fileStyle %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="index-main">
+    <div class="index-main-1">
+        <img class="macbook" src="{% static 'images/macbook.png' %}" alt="Macbook">
+        <div class="texts">
+            <h1>Smart Tech for Smarter Living</h1>
+            <p>Discover the latest phones, laptops, and gadgets — all in one place.</p>
+            <a href="">See What’s New</a>
+        </div>
+        <img class="iphone" src="{% static 'images/iphone15.png' %}" alt="iphone">
+
+    </div>
+
+    <div class="index-main-2">
+        <div style="min-height: 15vh;">
+            <h1>Explore Our Categories</h1>
+        </div>
+        <div style="background-color: #f8f7f7;" class="phones-div">
+            <a href=""><h2>Phones</h2></a>
+            <img src="{% static 'images/iphones15.png' %}" alt="Phones">
+        </div>
+        <div style="background-color: #efeeee;" class="laptops-div">
+            <a href=""><h2>Laptops</h2></a>
+            <img src="{% static 'images/macbooks.png' %}" alt="Laptops">
+        </div>
+        <div style="background-color: #e4e4e4;" class="watches-div">
+            <a href=""><h2>Watches</h2></a>
+            <img src="{% static 'images/watches.png' %}" alt="Watches">
+        </div>
+        <div style="background-color: #dbdbdb;" class="airpods-div">
+            <a href=""><h2>Headphones</h2></a>
+            <img src="{% static 'images/airpods.png' %}" alt="Headphones">
+        </div>
+        
+
+    </div>
+
+    <div class="index-main-3">
+
+        <h1>Why Choose Us?</h1>
+
+        <div class="cards">
+            <div>
+                <img src="{% static 'images/high-quality.png' %}" alt="Quality Image"
+                style="margin-bottom: 10px;">
+                <h3>High Quality</h3>
+                <p>We deliver reliable, top-tier quality you can trust — every time.</p>
+            </div>
+            <div>
+                <img src="{% static 'images/fast-delivery.png' %}" alt="Quality Image">
+                <h3>Fast & Reliable</h3>
+                <p>Quick response and dependable service, without delays.</p>
+            </div>
+            <div>
+                <img src="{% static 'images/group.png' %}" alt="Quality Image">
+                <h3>Experienced Team</h3>
+                <p>A skilled team with real experience and industry knowledge.</p>
+            </div>
+            <div>
+                <img src="{% static 'images/customer-service.png' %}" alt="Quality Image">
+                <h3>Excellent Support</h3>
+                <p>We’re always here to assist — friendly, fast, and helpful.</p>
+            </div>
+            <div>
+                <img src="{% static 'images/best-price.png' %}" alt="Quality Image">
+                <h3>Great Value</h3>
+                <p>Outstanding service at a fair price. No hidden fees.</p>
+            </div>
+            <div>
+                <img src="{% static 'images/trustworthiness.png' %}" alt="Quality Image">
+                <h3>Honesty</h3>
+                <p>We operate with full transparency, honesty, and trust.</p>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+    
+
+</div>
+{% endblock %}
+

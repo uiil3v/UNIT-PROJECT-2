@@ -1,10 +1,10 @@
 
-/* Main 1 */
+/* Main-1 */
 
 .index-main .index-main-1{
     background-color: rgb(244, 242, 242);
     position: relative;
-    min-height: 89.5vh;
+    min-height: 91vh;
     overflow: hidden;
 }
 
@@ -53,8 +53,145 @@
     font-weight: 500;
 }
 
+/* Main-1, Responsive Design */
 
-/* Main 2 */
+@media (max-width:1285.60px){
+    .index-main .index-main-1 .macbook{
+    width: 300px;
+}
+    .index-main .index-main-1 .iphone {
+    width: 450px;
+    right: 0px;
+    bottom: -150px;
+}
+
+    .index-main .index-main-1 .texts {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150px;
+    width: auto;
+    width: 600px;
+    z-index: 1;
+}
+    
+}
+
+@media (max-width:1100px){
+
+    .index-main .index-main-1 .texts {
+        width: 90%;
+    }
+    .index-main .index-main-1 .texts h1 {
+        width: 100%;
+        font-size: 75px;
+    }
+
+    .index-main .index-main-1 .texts p {
+        font-size: 45px;
+        margin-bottom: 40px;
+    }
+    .index-main .index-main-1 .texts a {
+        font-size: 35px;
+    }
+    .index-main .index-main-1 .macbook {
+        display: none;
+    }
+    .index-main .index-main-1 .iphone {
+    width: 750px;
+    right: 0px;
+    bottom: 0px;
+}
+    
+    
+}
+
+@media (max-width:885px){
+    .index-main .index-main-1{
+    min-height: 92vh;
+    }
+    .index-main .index-main-1 .texts h1 {
+        font-size: 65px;
+    }
+    .index-main .index-main-1 .texts p {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .index-main .index-main-1 .texts a {
+        font-size: 25px;
+    }
+    .index-main .index-main-1 .iphone {
+    width: 550px;
+    right: 0px;
+    bottom: 0px;
+}
+}
+
+@media (max-width:645px){
+    .index-main .index-main-1 .texts {
+        width: 90%;
+        top: 80px;
+    }
+
+    .index-main .index-main-1 .texts h1 {
+        width: 80%;
+        font-size: 50px;
+    }
+
+    .index-main .index-main-1 .texts p {
+        font-size: 23px;
+    }
+
+    .index-main .index-main-1 .texts a {
+        font-size: 14px;
+    }
+}
+
+
+
+@media (max-width:540px){ 
+    .index-main .index-main-1 .texts{
+        top: 40px;
+    }
+    .index-main .index-main-1 .iphone {
+        bottom: -100px;
+        width: 450px;
+    }
+
+    .index-main .index-main-1 {
+        min-height: 82vh;
+    }
+}
+
+@media (max-width:376px){ 
+
+    .index-main .index-main-1 .texts h1{
+        font-size: 40px;
+    }
+
+    .index-main .index-main-1 .iphone {
+        bottom: 0px;
+        width: 300px;
+    }
+
+}
+
+@media (max-width:344px){ 
+
+    .index-main .index-main-1 .texts h1{
+        font-size: 40px;
+    }
+
+    .index-main .index-main-1 .iphone {
+        bottom: 0px;
+        width: 400px;
+    }
+
+}
+
+
+
+/* Main-2 */
 
 .index-main .index-main-2{
     min-height: 100vh;
@@ -144,7 +281,418 @@
 }
 
 
-/* Main 3 */
+/* Main-2, Responsive Design */
+
+/* ====== Laptop (max 1280px) ====== */
+@media (max-width: 1286px) {
+    .index-main .index-main-2 .phones-div img {
+    right: 60px;
+    width: 500px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: 80px;
+        width: 400px;
+        bottom: 0;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 210px;
+    width: 230px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 230px;
+    width: 180px;
+    bottom: 0;
+}
+
+  
+}
+
+/* ====== Tablet Landscape (max 1024px) ====== */
+@media (max-width: 1024px) {
+        .index-main .index-main-2 .phones-div img {
+    right: -20px;
+    width: 550px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: 25px;
+        width: 450px;
+        bottom: 0;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 120px;
+    width: 300px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 150px;
+    width: 250px;
+    bottom: 0;
+}
+  
+}
+
+/* ====== Tablet Portrait & Large Phones (max 768px) ====== */
+@media (max-width: 768px) {
+    .index-main .index-main-2 .phones-div img {
+    right: -50px;
+    width: 300px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -20px;
+        width: 240px;
+        height: 160px;
+        bottom: 0px;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 20px;
+    width: 150px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 40px;
+    width: 110px;
+    bottom: 0;
+}
+
+  
+}
+
+/* ====== Small Phones (max 480px) ====== */
+@media (max-width: 480px) {
+        .index-main .index-main-2 .phones-div{
+    min-height: 18vh;
+}
+
+.index-main .index-main-2 .laptops-div{
+    min-height: 18vh;
+}
+
+.index-main .index-main-2 .watches-div{
+    min-height: 18vh;
+}
+
+.index-main .index-main-2 .airpods-div{
+    min-height: 18vh;
+}
+    .index-main .index-main-2 .phones-div img {
+    right: -45px;
+    width: 230px;
+    top: 0px;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -60px;
+        width: 220px;
+        height: auto;
+        bottom: 0px;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 10px;
+    width: 130px;
+    bottom: 25px;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 20px;
+    width: 110px;
+    bottom: 10px;
+}
+
+}
+
+@media (max-width: 431px) {
+
+    .index-main .index-main-2 .phones-div{
+    min-height: 15vh;
+}
+
+.index-main .index-main-2 .laptops-div{
+    min-height: 15vh;
+}
+
+.index-main .index-main-2 .watches-div{
+    min-height: 15vh;
+}
+
+.index-main .index-main-2 .airpods-div{
+    min-height: 15vh;
+}
+
+
+    .index-main .index-main-2 .phones-div img {
+    right: -65px;
+    width: 280px;
+    top: 10px;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -135px;
+        width: 330px;
+        height: auto;
+        bottom: 0px;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 5px;
+    width: 140px;
+    bottom: 10px;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 30px;
+    width: 120px;
+    bottom: 10px;
+}
+}
+
+@media (min-width: 343px) and (max-width:376px) {
+
+    .index-main .index-main-2 .phones-div{
+    min-height: 15vh;
+}
+
+.index-main .index-main-2 .laptops-div{
+    min-height: 15vh;
+}
+
+.index-main .index-main-2 .watches-div{
+    min-height: 15vh;
+}
+
+.index-main .index-main-2 .airpods-div{
+    min-height: 15vh;
+}
+
+
+    .index-main .index-main-2 .phones-div img {
+    right: -50px;
+    width: 230px;
+    top: 0px;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -145px;
+        width: 310px;
+        height: auto;
+        bottom: 0px;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 3px;
+    width: 120px;
+    bottom: 25px;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 20px;
+    width: 100px;
+    bottom: 10px;
+}
+}
+
+
+
+@media (min-width:852px) and (max-width:854px){
+    .index-main .index-main-2 .phones-div img {
+    right: -70px;
+    width: 550px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -220px;
+        width: 650px;
+        bottom: 0;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 20px;
+    width: 300px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 90px;
+    width: 250px;
+    bottom: 0;
+}
+
+.index-main .index-main-2 a h2 {
+    font-size: 40px;
+}
+
+.index-main .index-main-2 h1 {
+    font-size: 50px;
+}
+
+.index-main-3 h1 {
+    font-size: 50px;
+}
+
+}
+
+@media (min-width:911px) and (max-width:913px){
+    .index-main .index-main-2 .phones-div img {
+    right: -70px;
+    width: 550px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -200px;
+        width: 650px;
+        bottom: 0;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 20px;
+    width: 300px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 90px;
+    width: 250px;
+    bottom: 0;
+}
+
+.index-main .index-main-2 a h2 {
+    font-size: 40px;
+}
+
+.index-main .index-main-2 h1 {
+    font-size: 50px;
+}
+
+.index-main-3 h1 {
+    font-size: 50px;
+}
+
+}
+
+@media (min-width:1023px) and (max-width:1025px){
+    .index-main .index-main-2 .phones-div img {
+    right: -70px;
+    width: 590px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -200px;
+        width: 680px;
+        bottom: 0;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 20px;
+    width: 300px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 90px;
+    width: 250px;
+    bottom: 0;
+}
+
+.index-main .index-main-2 a h2 {
+    font-size: 40px;
+}
+
+.index-main .index-main-2 h1 {
+    font-size: 50px;
+}
+
+.index-main-3 h1 {
+    font-size: 50px;
+}
+
+}
+
+@media (min-width:819px) and (max-width:821px){
+    .index-main .index-main-2 .phones-div img {
+    right: -70px;
+    width: 520px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -220px;
+        width: 620px;
+        bottom: 0;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 20px;
+    width: 270px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 90px;
+    width: 220px;
+    bottom: 0;
+}
+
+.index-main .index-main-2 a h2 {
+    font-size: 40px;
+}
+
+.index-main .index-main-2 h1 {
+    font-size: 50px;
+}
+
+.index-main-3 h1 {
+    font-size: 50px;
+}
+
+}
+
+@media (min-width:767px) and (max-width:769px){
+    .index-main .index-main-2 .phones-div img {
+    right: -70px;
+    width: 500px;
+    top: 0;
+    z-index: 2;
+    }
+
+    .index-main .index-main-2 .laptops-div img {
+        left: -220px;
+        width: 600px;
+        height: auto;
+        bottom: 0;
+    }
+    .index-main .index-main-2 .watches-div img {
+    right: 20px;
+    width: 270px;
+    bottom: 0;
+    }
+    .index-main .index-main-2 .airpods-div img {
+    left: 90px;
+    width: 220px;
+    bottom: 0;
+}
+
+.index-main .index-main-2 a h2 {
+    font-size: 40px;
+}
+
+.index-main .index-main-2 h1 {
+    font-size: 50px;
+}
+
+.index-main-3 h1 {
+    font-size: 50px;
+}
+
+}
+
+
+/* Main-3 */
 
 .index-main .index-main-3{
     min-height: 100vh;
@@ -199,3 +747,6 @@
     width: 100px;
 
 }
+
+
+

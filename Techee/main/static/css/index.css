@@ -283,7 +283,7 @@
 
 /* Main-2, Responsive Design */
 
-/* ====== Laptop (max 1280px) ====== */
+
 @media (max-width: 1286px) {
     .index-main .index-main-2 .phones-div img {
     right: 60px;
@@ -311,7 +311,7 @@
   
 }
 
-/* ====== Tablet Landscape (max 1024px) ====== */
+
 @media (max-width: 1024px) {
         .index-main .index-main-2 .phones-div img {
     right: -20px;
@@ -338,7 +338,6 @@
   
 }
 
-/* ====== Tablet Portrait & Large Phones (max 768px) ====== */
 @media (max-width: 768px) {
     .index-main .index-main-2 .phones-div img {
     right: -50px;
@@ -367,7 +366,7 @@
   
 }
 
-/* ====== Small Phones (max 480px) ====== */
+
 @media (max-width: 480px) {
         .index-main .index-main-2 .phones-div{
     min-height: 18vh;

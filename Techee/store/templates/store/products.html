@@ -1,1 +1,105 @@
-products page
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Products{% endblock %}
+
+{% block fileStyle %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="products-page container py-5 min-vh-100  rounded-4 my-5 shadow-lg">
+
+  <!-- عنوان -->
+  <h2 class="text-center fw-bold mb-4">Explore Our Products</h2>
+
+  <!-- شريط البحث والتصفية -->
+  <form class="row g-3 mb-5 justify-content-center">
+    <div class="col-12 col-md-5">
+      <input type="text" class="form-control" placeholder="Search products...">
+    </div>
+    <div class="col-6 col-md-2">
+      <select class="form-select">
+        <option selected disabled>Category</option>
+        <option value="phones">Phones</option>
+        <option value="laptops">Laptops</option>
+        <option value="headphones">Headphones</option>
+      </select>
+    </div>
+    <div class="col-6 col-md-2">
+      <select class="form-select">
+        <option selected disabled>Price</option>
+        <option value="low-high">Low to High</option>
+        <option value="high-low">High to Low</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-2">
+      <button type="submit" class="btn btn-dark w-100">Search</button>
+    </div>
+  </form>
+
+  <!-- شبكة المنتجات -->
+  <div class="row g-4 justify-content-center">
+    {% for product in products %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 text-center">
+        <img src="{{ product.image.url }}" class="card-img-top p-3" alt="{{ product.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text fw-bold text-muted">{{ product.price }} SAR</p>
+          <a href="#" class="btn btn-dark">View Details</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No products found.</p>
+    {% endfor %}
+  </div>
+
+  <!-- الترقيم -->
+  {% if products.has_other_pages %}
+  <div class="d-flex justify-content-center mt-5">
+    <nav>
+      <ul class="pagination">
+
+        {% if products.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ products.previous_page_number }}">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+        {% endif %}
+
+        {% for num in products.paginator.page_range %}
+          {% if num == products.number %}
+            <li class="page-item active">
+              <span class="page-link">{{ num }}</span>
+            </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% if products.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ products.next_page_number }}">Next</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">Next</span>
+        </li>
+        {% endif %}
+
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
+
+</section>
+
+{% endblock %}

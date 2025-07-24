@@ -18,13 +18,13 @@
 </head>
 <body class="">
     <header class="container-fluid d-flex justify-content-between align-items-center w-100 px-5">
-        <a class="text-black text-decoration-none" href="">
+        <a class="text-black text-decoration-none" href="{% url 'main:home_view' %}">
             <h2 style='font-family: "Reem Kufi Fun", sans-serif; font-weight: 500; font-size: 55px;' >Techee</h2>
         </a>
         <div class="father d-flex align-items-center gap-4 justify-content-between col-9">
             <div class="a-options d-flex justify-content-between align-items-center gap-4">
-                <a class="text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;' href="">HOME</a>
-                <a class="text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;' href="">PRODUCTS</a>
+                <a class="text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;' href="{% url 'main:home_view' %}">HOME</a>
+                <a class="text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;' href="{% url 'store:products_view' %}">PRODUCTS</a>
                 <a class="about text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;' href="">ABOUT</a>
                 <a class="text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;' href="">CONTACT</a>
             </div>
@@ -72,9 +72,9 @@
             </div>
             <div class="right-son d-flex flex-row justify-content-evenly gap-5 w-50 align-items-center pt-4 pb-2 footer-padding-lg-end">
                 <ul class="list-unstyled d-flex flex-column row-gap-3">
-                    <li><a style="font-weight: 500;" href="">Home</a></li>
+                    <li><a style="font-weight: 500;" href="{% url 'main:home_view' %}">Home</a></li>
                     <li><a style="font-weight: 500;" href="">About</a></li>
-                    <li><a style="font-weight: 500;" href="">Products</a></li>
+                    <li><a style="font-weight: 500;" href="{% url 'store:products_view' %}">Products</a></li>
                     <li><a style="font-weight: 500;" href="">Contact</a></li>
                 </ul>
                 <ul class="list-unstyled d-flex flex-column row-gap-3">

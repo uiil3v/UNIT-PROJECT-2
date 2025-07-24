@@ -1,0 +1,11 @@
+/* عند التركيز (focus) على input أو select */
+.products-page input:focus,
+.products-page select:focus {
+  border-color: #000 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+
+

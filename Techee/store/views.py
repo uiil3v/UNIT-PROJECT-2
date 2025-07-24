@@ -37,6 +37,8 @@ def products_view(request: HttpRequest):
 
     return render(request, "store/products.html", {"products": page_obj})
 
+
+
 def detail_view(request: HttpRequest, product_id: int):
     product = get_object_or_404(Product, id=product_id)
 
@@ -49,6 +51,8 @@ def detail_view(request: HttpRequest, product_id: int):
         "relevant_products": relevant_products
     })
 
+
+
 def add_view(request: HttpRequest):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
@@ -59,9 +63,29 @@ def add_view(request: HttpRequest):
         form = ProductForm()
     return render(request, "store/add.html", {"form": form})
 
-def update_view(request: HttpRequest, product_id: int):
-    return render(request, "store/update.html")
 
-def delete_view(request: HttpRequest, product_id: int):
-    return render(request, "store/delete.html")
+
+def update_view(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect("store:products_view")  # أو detail_view حسب ما تفضل
+    else:
+        form = ProductForm(instance=product)
+
+    return render(request, "store/update.html", {"form": form, "product": product})
+
+
+
+def delete_view(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.method == "POST":
+        product.delete()
+        return redirect("store:products_view")
+
+    return redirect("store:products_view")
 

@@ -15,43 +15,70 @@
   <h2 class="text-center fw-bold mb-4">Explore Our Products</h2>
 
   <!-- شريط البحث والتصفية -->
-  <form class="row g-3 mb-5 justify-content-center">
-    <div class="col-12 col-md-5">
-      <input type="text" class="form-control" placeholder="Search products...">
-    </div>
-    <div class="col-6 col-md-2">
-      <select class="form-select">
-        <option selected disabled>Category</option>
-        <option value="phones">Phones</option>
-        <option value="laptops">Laptops</option>
-        <option value="headphones">Headphones</option>
-      </select>
-    </div>
-    <div class="col-6 col-md-2">
-      <select class="form-select">
-        <option selected disabled>Price</option>
-        <option value="low-high">Low to High</option>
-        <option value="high-low">High to Low</option>
-      </select>
-    </div>
-    <div class="col-12 col-md-2">
-      <button type="submit" class="btn btn-dark w-100">Search</button>
-    </div>
-  </form>
+<form method="GET" class="row g-3 mb-5 justify-content-center">
+
+  <!-- البحث -->
+  <div class="col-12 col-md-5">
+    <input type="text" name="search" class="form-control" placeholder="Search products..." value="{{ request.GET.search }}">
+  </div>
+
+  <!-- الفئة -->
+  <div class="col-6 col-md-2">
+    <select class="form-select" name="category">
+      <option value="" {% if not request.GET.category %}selected{% endif %}>All Categories</option>
+      <option value="phones" {% if request.GET.category == 'phones' %}selected{% endif %}>Phones</option>
+      <option value="laptops" {% if request.GET.category == 'laptops' %}selected{% endif %}>Laptops</option>
+      <option value="headphones" {% if request.GET.category == 'headphones' %}selected{% endif %}>Headphones</option>
+      <option value="watches" {% if request.GET.category == 'watches' %}selected{% endif %}>Watches</option>
+      <option value="tablets" {% if request.GET.category == 'tablets' %}selected{% endif %}>Tablets</option>
+    </select>
+
+  </div>
+
+  <!-- السعر -->
+  <div class="col-6 col-md-2">
+    <select class="form-select" name="price">
+      <option value="" {% if not request.GET.price %}selected{% endif %}>All Prices</option>
+      <option value="low-high" {% if request.GET.price == 'low-high' %}selected{% endif %}>Low to High</option>
+      <option value="high-low" {% if request.GET.price == 'high-low' %}selected{% endif %}>High to Low</option>
+    </select>
+  </div>
+
+  <!-- زر البحث -->
+  <div class="col-12 col-md-2">
+    <button type="submit" class="btn btn-dark w-100">Search</button>
+  </div>
+
+</form>
+
+
 
   <!-- شبكة المنتجات -->
   <div class="row g-4 justify-content-center">
     {% for product in products %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="card h-100 text-center">
-        <img src="{{ product.image.url }}" class="card-img-top p-3" alt="{{ product.name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text fw-bold text-muted">{{ product.price }} SAR</p>
-          <a href="#" class="btn btn-dark">View Details</a>
-        </div>
+  <div class="card h-100 shadow border-0 rounded-4 overflow-hidden">
+    <img src="{{ product.image.url }}" class="card-img-top p-3" alt="{{ product.name }}" style="height: 200px; object-fit: contain;">
+
+    <div class="card-body d-flex flex-column justify-content-between text-start px-4 pb-4">
+      <h5 class="card-title fw-bold">{{ product.name }}</h5>
+      <p class="card-text text-muted small">{{ product.description|truncatewords:10 }}</p>
+      <p class="fw-bold mb-2">{{ product.price }} SAR</p>
+
+      <!-- نجوم شكلية -->
+      <div class="mb-3 text-warning">
+        ★★★★★
+      </div>
+
+      <!-- الأزرار -->
+      <div class="d-flex gap-2 mt-auto">
+        <a href="#" class="btn btn-outline-dark w-50">View Details</a>
+        <a href="#" class="btn btn-dark w-50">Add to Cart</a>
       </div>
     </div>
+  </div>
+</div>
+
     {% empty %}
     <p class="text-center">No products found.</p>
     {% endfor %}

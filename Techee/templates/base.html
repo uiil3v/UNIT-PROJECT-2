@@ -31,12 +31,11 @@
             
 
 
-            <form action="" class="col-4">
+            <form action="{% url 'store:products_view' %}" method="get" class="col-4">
                 <div style="position: relative;" class="input-group">
-                    <input type="search" class="form-control rounded-4"
-                        style="outline: none; box-shadow: none; font-weight: 450;" placeholder="Search...">
-                    <i style="position: absolute; right: 15px; top: 12px; color: rgb(194, 193, 193);"
-                        class="fa-solid fa-magnifying-glass"  ></i>
+                    <input type="search" name="search" class="form-control rounded-4"
+                    style="outline: none; box-shadow: none; font-weight: 450;" placeholder="Search products..." required>
+                    <i style="position: absolute; right: 15px; top: 12px; color: rgb(194, 193, 193);" class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </form>
 

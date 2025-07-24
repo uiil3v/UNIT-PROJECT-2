@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest, HttpResponse
 from .models import Product 
 from .forms import ProductForm
@@ -38,7 +38,16 @@ def products_view(request: HttpRequest):
     return render(request, "store/products.html", {"products": page_obj})
 
 def detail_view(request: HttpRequest, product_id: int):
-    return render(request, "store/detail.html")
+    product = get_object_or_404(Product, id=product_id)
+
+    # منتجات مشابهة بنفس التصنيف
+    relevant_products = Product.objects.filter(category=product.category).exclude(id=product.id)[:4]
+
+    # ما فيه تعليقات حالياً، لكن نجهز الكود لو حبيت تضيفه لاحقًا
+    return render(request, "store/detail.html", {
+        "product": product,
+        "relevant_products": relevant_products
+    })
 
 def add_view(request: HttpRequest):
     if request.method == "POST":

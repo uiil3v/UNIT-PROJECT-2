@@ -232,3 +232,6 @@ body {
 
 
 
+.dropdown-toggle::after {
+  color: #000 !important;
+}

@@ -5,26 +5,9 @@
 
 {% block fileStyle %}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
 <style>
-  .product-page {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-  }
-
-  .tab-btns button {
-    border: none;
-    background: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-
-  .tab-btns button.active {
-    border-bottom: 3px solid black;
-    color: black;
-  }
+  
 </style>
 {% endblock %}
 
@@ -33,12 +16,12 @@
   <div class="product-page">
     <div class="row g-5">
       
-      <!-- صورة المنتج -->
+      
       <div class="col-md-6 text-center">
         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid rounded" style="max-height: 400px; object-fit: contain;">
       </div>
 
-      <!-- تفاصيل المنتج -->
+      
       <div class="col-md-6">
         <div class="d-flex justify-content-between align-items-center mb-2">
           <small class="text-muted">Product Code: {{ product.id }}</small>
@@ -63,7 +46,7 @@
 
         <p class="text-muted mb-4">{{ product.description }}</p>
 
-        <!-- أزرار الإضافة -->
+        
         <div class="d-flex gap-3 mb-4">
           <button class="btn btn-dark text-white px-4 fw-bold">ADD TO CART</button>
           <button class="btn btn-outline-dark px-4">ADD TO WISHLIST</button>
@@ -71,7 +54,7 @@
       </div>
     </div>
 
-    <!-- تبويبات معلومات -->
+    
     <div class="mt-5">
       <div class="tab-btns border-bottom mb-3">
         <button class="active">DETAIL</button>
@@ -89,7 +72,7 @@
     </div>
   </div>
 
-  <!-- المنتجات المشابهة -->
+  
   <div class="mt-5 pt-5 border-top">
     <h3 class="fw-bold mb-4 text-center">You May Also Like</h3>
 

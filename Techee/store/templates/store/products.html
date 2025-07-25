@@ -11,18 +11,18 @@
 
 <section class="products-page container py-5 min-vh-100  rounded-4 my-5 shadow-lg">
 
-  <!-- عنوان -->
+  
   <h2 class="text-center fw-bold mb-4">Explore Our Products</h2>
 
-  <!-- شريط البحث والتصفية -->
+  
 <form method="GET" class="row g-3 mb-5 justify-content-center">
 
-  <!-- البحث -->
+  
   <div class="col-12 col-md-5">
     <input type="text" name="search" class="form-control" placeholder="Search products..." value="{{ request.GET.search }}">
   </div>
 
-  <!-- الفئة -->
+ 
   <div class="col-6 col-md-2">
     <select class="form-select" name="category">
       <option value="" {% if not request.GET.category %}selected{% endif %}>All Categories</option>
@@ -35,7 +35,7 @@
 
   </div>
 
-  <!-- السعر -->
+  
   <div class="col-6 col-md-2">
     <select class="form-select" name="price">
       <option value="" {% if not request.GET.price %}selected{% endif %}>All Prices</option>
@@ -44,7 +44,7 @@
     </select>
   </div>
 
-  <!-- زر البحث -->
+  
   <div class="col-12 col-md-2">
     <button type="submit" class="btn btn-dark w-100">Search</button>
   </div>
@@ -53,7 +53,7 @@
 
 
 
-  <!-- شبكة المنتجات -->
+  
   <div class="row g-4 justify-content-center">
     {% for product in products %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -65,12 +65,12 @@
       <p class="card-text text-muted small">{{ product.description|truncatewords:10 }}</p>
       <p class="fw-bold mb-2">{{ product.price }} SAR</p>
 
-      <!-- نجوم شكلية -->
+      
       <div class="mb-3 text-warning">
         ★★★★★
       </div>
 
-      <!-- الأزرار -->
+      
       <div class="d-flex gap-2 mt-auto">
         <a href="{% url 'store:detail_view' product.id %}" class="btn btn-outline-dark w-50">View Details</a>
         <a href="#" class="btn btn-dark w-50">Add to Cart</a>
@@ -84,7 +84,7 @@
     {% endfor %}
   </div>
 
-  <!-- الترقيم -->
+  
   {% if products.has_other_pages %}
   <div class="d-flex justify-content-center mt-5">
     <nav>

@@ -1,0 +1,19 @@
+.product-page {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  }
+
+  .tab-btns button {
+    border: none;
+    background: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .tab-btns button.active {
+    border-bottom: 3px solid black;
+    color: black;
+  }

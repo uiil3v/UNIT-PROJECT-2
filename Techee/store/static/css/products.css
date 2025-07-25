@@ -1,4 +1,4 @@
-/* عند التركيز (focus) على input أو select */
+
 .products-page input:focus,
 .products-page select:focus {
   border-color: #000 !important;
@@ -7,7 +7,7 @@
 }
 
  .pagination .page-link {
-    color: #000; /* اللون الأساسي للروابط */
+    color: #000; 
   }
 
   .pagination .page-link:hover {

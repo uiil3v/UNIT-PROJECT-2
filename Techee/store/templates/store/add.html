@@ -6,19 +6,7 @@
 {% block fileStyle %}
 <link rel="stylesheet" href="{% static 'css/add.css' %}">
 <style>
-  input:focus,
-  select:focus,
-  textarea:focus {
-    border: 2px solid #000 !important;
-    box-shadow: none !important;
-    outline: none !important;
-  }
-
-  input,
-  select,
-  textarea {
-    transition: border-color 0.3s ease;
-  }
+ 
 </style>
 {% endblock %}
 
@@ -30,19 +18,19 @@
   <form method="POST" enctype="multipart/form-data" class="row g-4">
     {% csrf_token %}
 
-    <!-- اسم المنتج -->
+    
     <div class="col-12">
       <label for="id_name" class="form-label text-uppercase small fw-bold">Product Name</label>
       <input type="text" name="name" id="id_name" class="form-control bg-light rounded-3 border-0 p-3" placeholder="Enter product name">
     </div>
 
-    <!-- السعر -->
+    
     <div class="col-md-6">
       <label for="id_price" class="form-label text-uppercase small fw-bold">Price</label>
       <input type="number" name="price" id="id_price" class="form-control bg-light rounded-3 border-0 p-3" placeholder="Enter price">
     </div>
 
-    <!-- التصنيف -->
+    
     <div class="col-md-6">
         <label for="id_category" class="form-label text-uppercase small fw-bold">Category</label>
         <select name="category" id="id_category" class="form-select bg-light rounded-3 border-0 p-3">
@@ -53,19 +41,19 @@
     </div>
 
 
-    <!-- الصورة -->
+    
     <div class="col-12">
       <label for="id_image" class="form-label text-uppercase small fw-bold">Product Image</label>
       <input type="file" name="image" id="id_image" class="form-control bg-light rounded-3 border-0 p-3">
     </div>
 
-    <!-- الوصف -->
+    
     <div class="col-12">
       <label for="id_description" class="form-label text-uppercase small fw-bold">Description</label>
       <textarea name="description" id="id_description" rows="4" class="form-control bg-light rounded-3 border-0 p-3" placeholder="Enter product description"></textarea>
     </div>
 
-    <!-- زر الإرسال -->
+    
     <div class="col-12 text-center mt-4">
       <button type="submit" class="btn btn-dark w-100 py-3 rounded-pill fw-bold fs-5">
         Submit <span class="ms-2">&rarr;</span>

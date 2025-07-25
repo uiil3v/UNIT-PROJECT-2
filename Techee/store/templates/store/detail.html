@@ -48,7 +48,12 @@
 
         
         <div class="d-flex gap-3 mb-4">
-          <button class="btn btn-dark text-white px-4 fw-bold">ADD TO CART</button>
+          {% if request.user.is_authenticated %}
+            <a href="{% url 'store:add_to_cart_view' product.id %}" class="btn btn-dark px-4">ADD TO CART</a>
+          {% else %}
+            <a href="{% url 'users:login_view' %}" class="btn btn-outline-dark px-4">Login to Add</a>
+          {% endif %}
+
           <button class="btn btn-outline-dark px-4">ADD TO WISHLIST</button>
         </div>
       </div>
@@ -58,9 +63,8 @@
     <div class="mt-5">
       <div class="tab-btns border-bottom mb-3">
         <button class="active">DETAIL</button>
-        <button>SIZE DETAIL</button>
-        <button>RETURN POLICY</button>
         <button>DELIVERY INFO</button>
+         <button>REVIEWS</button>
       </div>
       <div>
         <ul class="list-unstyled">
@@ -71,6 +75,43 @@
       </div>
     </div>
   </div>
+
+
+ <!-- قسم التعليقات -->
+<div class="comments-section mt-5 pt-4 border-top">
+  <h3 class="fw-bold mb-4 text-center">Customer Reviews</h3>
+
+  {% if comments %}
+    {% for comment in comments %}
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="card-title mb-0">{{ comment.user.username }}</h6>
+            <small class="text-muted">{{ comment.created_at|date:"M d, Y" }}</small>
+          </div>
+          <p class="card-text">{{ comment.content }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="alert alert-info text-center">No reviews yet. Be the first to review this product!</div>
+  {% endif %}
+
+  {% if request.user.is_authenticated %}
+    <h4 class="mt-5 mb-3 text-center">Add a Review</h4>
+    <form method="post" class="mb-5 d-flex flex-column align-items-center">
+      {% csrf_token %}
+      <div class="mb-3 w-75">
+        {{ form.content }}
+      </div>
+      <button type="submit" class="btn btn-primary px-4">Submit Review</button>
+    </form>
+  {% else %}
+    <p class="text-center"><a href="{% url 'users:login_view' %}">Login</a> to leave a review.</p>
+  {% endif %}
+</div>
+
+
 
   
   <div class="mt-5 pt-5 border-top">

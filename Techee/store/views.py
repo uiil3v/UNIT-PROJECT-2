@@ -165,7 +165,6 @@ def checkout_view(request):
     cart = get_object_or_404(Cart, user=request.user)
     cart_items = cart.items.select_related('product')
 
-    # نحسب subtotal لكل عنصر في view
     items_with_subtotal = []
     total = 0
     for item in cart_items:

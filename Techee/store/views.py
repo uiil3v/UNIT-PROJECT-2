@@ -5,6 +5,8 @@ from .forms import ProductForm, CommentForm
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
+
 
 
 def products_view(request: HttpRequest):
@@ -62,6 +64,7 @@ def detail_view(request: HttpRequest, product_id: int):
         "form": form,
     })
 
+@user_passes_test(lambda u: u.is_staff)
 def add_view(request: HttpRequest):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
@@ -73,7 +76,7 @@ def add_view(request: HttpRequest):
     return render(request, "store/add.html", {"form": form})
 
 
-
+@user_passes_test(lambda u: u.is_staff)
 def update_view(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     if request.method == "POST":
@@ -86,7 +89,7 @@ def update_view(request, product_id):
     return render(request, "store/update.html", {"form": form, "product": product})
 
 
-
+@user_passes_test(lambda u: u.is_staff)
 def delete_view(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     if request.method == "POST":

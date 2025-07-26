@@ -12,7 +12,16 @@
 <section class="products-page container py-5 min-vh-100  rounded-4 my-5 shadow-lg">
 
   
+
+  {% if request.user.is_authenticated and request.user.is_staff %}
+    <div class="text-center mb-4">
+      <a href="{% url 'store:add_view' %}" class="btn btn-outline-dark px-5">+ Add New Product</a>
+    </div>
+  {% endif %}
+  
   <h2 class="text-center fw-bold mb-4">Explore Our Products</h2>
+
+  
 
   
 <form method="GET" class="row g-3 mb-5 justify-content-center">

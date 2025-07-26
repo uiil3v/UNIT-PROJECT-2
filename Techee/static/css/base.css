@@ -29,6 +29,23 @@ body {
 
 /* Header Responsive Design */
 
+header .father form {
+    position: absolute;
+    right: 190px;
+}
+
+header .father .user-icon{
+    position: absolute;
+    right: 40px;
+}
+
+
+@media (max-width: 1330px){
+    header .father form {
+        position: static;
+    }
+}
+
 @media (max-width: 880px){
 
     header.container-fluid {
@@ -140,6 +157,11 @@ body {
         margin-top: 3px;
         
     }
+    header .father .user-icon {
+        top: 19px;
+        right: 14px;
+        z-index: 10;
+    }
 
 }
 
@@ -148,13 +170,10 @@ body {
         left: 140px;
         width: 200px !important;
     }
-
-}
-
-@media (max-width:400px){
-    .a-options { 
-        left: 125px;
-        width: 200px !important;
+    header .father .user-icon {
+        top: 19px;
+        right: 14px;
+        z-index: 10;
     }
 
 }
@@ -174,7 +193,7 @@ body {
         display: flex;
     }
 
-    header .user-icon {
+    header .father .user-icon {
         position: absolute;
         top: 17px;
         right: 12px;
@@ -184,10 +203,26 @@ body {
 }
 
 
+/* Logeed-In Responsive Design */
+
+.dropdown-toggle::after {
+  color: #000 !important;
+}
+
+header .father .dropdown {
+    position: absolute;
+    right: 40px;
+}
+
+
+
+
+
+
 
 /* Footer Responsive Design */
 
-/* padding فقط في الشاشات الكبيرة (lg وأعلى) */
+
 @media (min-width: 992px) {
     .footer-padding-lg {
         padding-left: 150px;

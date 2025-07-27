@@ -31,7 +31,8 @@ body {
 
 header .father form {
     position: absolute;
-    right: 190px;
+    right: 220px;
+    width: 450px;
 }
 
 header .father .user-icon{
@@ -40,13 +41,17 @@ header .father .user-icon{
 }
 
 
-@media (max-width: 1330px){
+@media (max-width: 1280px){
+
+
     header .father form {
-        position: static;
+        position: absolute;
+        right: 180px;
+        width: 350px;
     }
 }
 
-@media (max-width: 880px){
+@media (max-width: 1024px){
 
     header.container-fluid {
         padding-inline: 5px !important;
@@ -55,23 +60,61 @@ header .father .user-icon{
 
     header a h2{
         font-size: 40px !important;
+        margin-left: 10px;
     }
 
     header div .a-options{
         gap: 0 !important;
-        width: 350px;
+        width: 270px;
     }
+
     header div .a-options a {
         font-size: 14px !important;
     }
 
+    
+    header .father form {
+        right: 170px;
+        width: 300px;
+    }
 
+    header .father .user-icon{
+    position: static;
+    margin-right: 10px;
+    }
 
 }
 
-@media (max-width:730px){
-    header div .a-options .about {
+@media (max-width:914px){
+
+    header .father .a-options .about {
         display: none;
+    }
+
+    header .father .a-options {
+        width: 220px;
+    }
+
+    header .father form{
+        width: 270px;
+    }
+}
+
+@media (max-width:854px){
+
+     header .father form {
+        right: 165px;
+
+        width: 200px;
+    }
+}
+
+@media (max-width:770px){
+
+     header .father form {
+        right: 160px;
+
+        width: 180px;
     }
 }
 
@@ -83,10 +126,21 @@ header .father .user-icon{
         position: relative;
     }
 
-    header .user-icon {
+    header .father .a-options .about{
+        display: flex;
+    }
+
+    header .father .user-icon {
         position: absolute;
         top: 22px;
         right: 12px;
+        z-index: 10;
+    }
+
+    header .father .dropdown-a{
+        position: absolute;
+        right: -25px;
+        top: -40px;
         z-index: 10;
     }
 
@@ -104,28 +158,29 @@ header .father .user-icon{
         margin-bottom: 0 !important;
     }
 
-    header .father .a-options .about {
-        display: flex;
-    }
-    .a-options {
+    header .father .a-options {
         flex-direction: row !important;
         align-items: flex-start !important;
         gap: 1px !important;
-        width: 300px !important;
+        width: 90% !important;
         position: absolute;
-        top: 24px;
-        left: 160px;
+        top: 70px;
+        
 
     }
 
     header div .a-options a {
-        font-size: 13px !important;
+        font-size: 14px !important;
         padding: 2px 0;
     }
 
+        header .father form {
+        position: static;
+        }
+
     form.col-4 {
         width: 100% !important;
-        margin-top: 0px;
+        margin-top: 40px;
     }
 }
 
@@ -165,20 +220,8 @@ header .father .user-icon{
 
 }
 
-@media (max-width:420px){
-    .a-options { 
-        left: 140px;
-        width: 200px !important;
-    }
-    header .father .user-icon {
-        top: 19px;
-        right: 14px;
-        z-index: 10;
-    }
 
-}
-
-@media (max-width:400px){
+@media (max-width:431px){
     .a-options { 
         top: 65px;
         left: 18px;

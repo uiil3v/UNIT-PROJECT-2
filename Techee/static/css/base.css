@@ -4,19 +4,11 @@
         padding: 0;
     }
 
-header div form input:focus{
-        border-color: black !important;
-        outline: none;
-        box-shadow: none;
-    }
+
 
 footer a {
     text-decoration: none;
     color: black;
-}
-
-.a-options a {
-    font-size: 16px;
 }
 
 
@@ -39,6 +31,39 @@ header .father .user-icon{
     position: absolute;
     right: 40px;
 }
+
+header .father .a-options a {
+    font-size: 16px;
+    transition: 0.35s;
+}
+
+header .father .a-options a:hover {
+    transform: scale(1.07);
+}
+
+header .father .a-options a:active {
+    transform: scale(0.90);
+}
+
+header div form input:focus{
+        border-color: black !important;
+        outline: none;
+        box-shadow: none;
+    }
+
+
+header a h2{ 
+    transition: 0.3s;
+}
+
+header a h2:hover { 
+    color: #636363;
+}
+
+
+
+
+
 
 
 @media (max-width: 1280px){
@@ -220,7 +245,6 @@ header .father .user-icon{
 
 }
 
-
 @media (max-width:431px){
     .a-options { 
         top: 65px;
@@ -264,6 +288,14 @@ header .father .dropdown {
 
 
 /* Footer Responsive Design */
+
+footer .footer-up .left-son div a i{
+    transition: 0.4s;
+}
+
+footer .footer-up .left-son div a i:hover {
+    transform: scale(1.09);
+}
 
 
 @media (min-width: 992px) {

@@ -46,12 +46,22 @@
 .index-main .index-main-1 .texts a {
     text-decoration: none;
     color: white;
-    background-color: black;
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 10px;
     font-weight: 500;
+    z-index: 0;
+    background: linear-gradient(45deg,  black, rgb(70, 69, 69),  rgb(172, 172, 172));
+    transition: 0.4s ;
 }
+
+
+.index-main .index-main-1 .texts a:hover {
+    font-size: 18.5px;
+
+}
+
+
 
 /* Main-1, Responsive Design */
 
@@ -731,6 +741,10 @@
     padding-inline: 20px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.index-main .index-main-3 .cards div:hover{
+    transform: scale(1.05)
 }
 
 .index-main .index-main-3 .cards div h3 {

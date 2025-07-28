@@ -21,3 +21,67 @@
     border-color: #000;
     color: #fff;
   }
+
+
+
+  /* Dark Mode */
+
+  
+body.dark-mode .products-page {
+  background-color: rgba(18, 18, 18, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+body.dark-mode .products-page .form-control,
+body.dark-mode .products-page .form-select {
+  background-color: rgba(30, 30, 30, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(68, 68, 68, 1);
+}
+
+body.dark-mode .products-page input::placeholder {
+  color: rgba(204, 204, 204, 1);
+}
+
+body.dark-mode .products-page .btn-dark {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  border: none;
+}
+
+body.dark-mode .products-page .btn-outline-dark {
+  color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+body.dark-mode .products-page .btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+body.dark-mode .products-page .card {
+  background-color: rgba(28, 28, 28, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+body.dark-mode .products-page .card-text.text-muted {
+  color: rgba(170, 170, 170, 1) !important;
+}
+
+body.dark-mode .pagination .page-link {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+  border-color: rgba(68, 68, 68, 1);
+}
+
+body.dark-mode .pagination .page-link:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+body.dark-mode .pagination .page-item.active .page-link {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  border-color: rgba(255, 255, 255, 1);
+}

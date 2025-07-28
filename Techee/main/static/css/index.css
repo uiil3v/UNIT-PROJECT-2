@@ -47,7 +47,7 @@
     text-decoration: none;
     color: white;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 25px;
     border-radius: 10px;
     font-weight: 500;
     z-index: 0;
@@ -57,7 +57,7 @@
 
 
 .index-main .index-main-1 .texts a:hover {
-    font-size: 18.5px;
+    font-size: 26px;
 
 }
 
@@ -225,6 +225,22 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.phones-div {
+  background-color: #f8f7f7;
+}
+
+.laptops-div {
+  background-color: #efeeee;
+}
+
+.watches-div {
+  background-color: #e4e4e4;
+}
+
+.airpods-div {
+  background-color: #dbdbdb;
 }
 
 .index-main .index-main-2 div a {
@@ -759,4 +775,123 @@
 .index-main .index-main-3 .cards div img{
     width: 100px;
 
+}
+
+
+
+
+
+
+/* Dark Mode */
+
+body.dark-mode .index-main {
+  background-color: rgba(18, 18, 18, 1);
+  color: rgba(241, 241, 241, 1);
+}
+
+body.dark-mode .index-main h1,
+body.dark-mode .index-main h2,
+body.dark-mode .index-main h3,
+body.dark-mode .index-main p {
+  color: rgba(241, 241, 241, 1);
+}
+
+body.dark-mode .index-main-1 a {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .phones-div,
+body.dark-mode .laptops-div,
+body.dark-mode .watches-div,
+body.dark-mode .airpods-div {
+  background-color: rgba(40, 45, 50, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .cards > div {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .cards > div:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  transition: 0.3s ease;
+}
+
+
+body.dark-mode .index-main-1 {
+  background-color: rgb(35, 35, 35);
+}
+
+body.dark-mode .index-main-1 h1,
+body.dark-mode .index-main-1 p {
+  color: rgba(241, 241, 241, 1);
+}
+
+body.dark-mode .index-main-1 .texts a {
+  background: linear-gradient(45deg,  white, white, white);
+  color: rgba(0, 0, 0, 1);
+  border: none;
+}
+
+body.dark-mode .index-main-2 {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 1),
+    rgba(18, 18, 18, 1),
+    rgba(24, 24, 24, 1),
+    rgba(30, 30, 30, 1),
+    rgba(36, 36, 36, 1)
+  );
+}
+
+body.dark-mode .index-main-2 h1,
+body.dark-mode .index-main-2 h2 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .phones-div,
+body.dark-mode .laptops-div,
+body.dark-mode .watches-div,
+body.dark-mode .airpods-div {
+  background-color: rgba(20, 20, 20, 1);
+  border: 1px solid rgba(60, 60, 60, 0.2);
+}
+
+
+.dark-mode .index-main-3 {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode .index-main-3 h1 {
+  color: #fff;
+}
+
+.dark-mode .index-main-3 .cards div {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .index-main-3 .cards div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+
+.dark-mode .index-main-3 .cards div i {
+  color: #f1f1f1 !important;
+}
+
+
+.dark-mode .index-main-3 .cards div img {
+  filter: brightness(0) invert(1);
 }

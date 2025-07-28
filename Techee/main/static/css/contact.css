@@ -1,0 +1,26 @@
+.contact-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+
+    .contact-box {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+
+    input:focus,
+    textarea:focus {
+        border: 2px solid #000 !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }

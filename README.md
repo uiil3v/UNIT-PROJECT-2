@@ -1,136 +1,54 @@
-# UNIT-PROJECT-2
+# Techee - E-commerce Website for Electronics
 
-## Create a Project of your own choosing
-
-Base on what you’ve learned until now , create a project of your choosing. Impress us with your creativity and execution.
-
-
-## Minimum Requirements
-- Use Django.
-- Use Templates & Template Inheritance.
-- Use static, media & dynamic urls as needed.
-- Organize your project in apps as needed.
-- Use models to represent you data.
-- Use a CSS library to style your website.
-- Must be responsive (good looking of big screens and small screens).
-- Use naming conventions & best practices.
-- Strive to make the user journey intuitive and complete.
-
-## Use python-dotenv to save your sensitive data.
-- https://pypi.org/project/python-dotenv/
+## Project Description
+Techee is a modern and responsive e-commerce platform for electronic devices. It allows users to browse and search for products, view detailed information, and manage their own products if authenticated. The project is built using Django and styled with Bootstrap.
 
 
-## Use a CDN or cloud storage provider to sore your large static files (videos, images, etc.), such as:
-- https://firebase.google.com/docs/storage
-
-## Use Git & Github to manage and track changes in your project.
-- At lease commit and sync the changes once at the end of everyday.
-
-## Edit the README.md file to include (include the info at the top):
-- Project Name
-- Project Description
-- Features list.
-- User Stories (link or file)
-- UML (link or file)
-- Wireframe (link or file)
-
-
-## Example Projects :
-
-
-1. **Task Management System:**
-- **Overview:** Create a platform for managing tasks and projects within a team or organization.
-- **Features:**
-- Task creation, assignment, and tracking.
-- Project management with milestones.
-- File uploads and comments on tasks.
-- Notification system for task updates.
+## Features
+- User authentication system (registration, login, and logout)
+- Product management for authenticated users (create, update, delete)
+- Dynamic product detail page including:
+  - Product image, description, price, and category
+  - User comments section
+- Search functionality with:
+  - Keyword-based search
+  - Category filter
+  - Price sorting (low to high, high to low)
+- Responsive design using Bootstrap (mobile & desktop friendly)
+- Image upload and display using Django Media settings
+- Environment variable handling with python-dotenv for better security
+- Admin panel for managing products, users, and comments
+- Git & GitHub used to track changes and manage project versions
 
 
 
 
-**Online Learning Platform:**
+## User Stories
 
-- **Overview:** Develop a platform for online courses, quizzes, and educational resources.
-- **Features:**
-- Course creation and enrollment.
-- Quiz and assessment functionalities.
-- Progress tracking and certificates.
+### For Guests:
+- I can browse all available products without an account.
+- I can search for products using keywords or filters.
 
+### For Registered Users:
+- I can register for a new account.
+- I can log in and access my account.
+- I can create, update, and delete my own products.
+- I can view detailed information about any product.
+- I can leave comments on product pages.
 
-
-
-**Crowdfunding Platform:**
-
-- **Overview:** Build a crowdfunding website where users can create campaigns and seek financial support for their projects.
-- **Features:**
-    -  project history.
-    - Campaign creation and customization.
-    - Payment integration for contributions.
-    - Progress tracking and updates.
-
-**Job Board and Recruitment System:**
-
-- **Overview:** Develop a platform for job seekers and employers to connect.
-- **Features:**
-    - User profiles with resumes.
-    - Job posting and application functionalities.
-    - Search and filter options for jobs.
-    - Employer dashboards for managing postings.
+### For Admins:
+- I can access the Django admin dashboard.
+- I can view, edit, or delete any product in the system.
+- I can manage user-generated content such as comments.
 
 
-**Inventory Management System:**
+## UML
+![UML Diagram](link-or-path-here)
 
-- **Overview:** Build a system for tracking and managing inventory for businesses.
-- **Features:**
-    - Product catalog with stock levels.
-    - Order processing and tracking.
-    - Reporting and analytics.
+## Wireframe
+![Wireframe](link-or-path-here)
 
-
-**Recipe Sharing Platform:**
-
-- **Overview:** Create a platform where users can share and discover recipes.
-- **Features:**
-    - saved recipes.
-    - Recipe creation and editing.
-    - Search and categorization of recipes.
-    - User ratings and reviews.
-      
-## Resources:
-
-**Free high quality images :**
-
-- https://www.pexels.com/
-- https://unsplash.com
-
-**Free sounds website:**
-
-- https://mixkit.co/
-
-**Free stock videos:**
-
-- https://pixabay.com/videos/
-
-**Free Fonts:**
-
-- https://fonts.google.com
-
-**Free Icons**
-
-- https://fonts.google.com/icons
-- https://icons.getbootstrap.com/
-
-**CSS Library:**
-
-- https://getbootstrap.com/
-- https://get.foundation/index.html
-
-**CSS Animation libraries:**
-
-- https://animate.style
-- https://www.minimamente.com/project/magic/
-
-
-
- 
+## Additional Information
+- Bootstrap was used for styling and responsive layout.
+- Free images were used from [Pexels](https://www.pexels.com) and [Unsplash](https://unsplash.com).
+- Environment variables are managed with [python-dotenv](https://pypi.org/project/python-dotenv/).

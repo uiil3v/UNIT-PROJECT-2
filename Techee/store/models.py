@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
 
 class Product(models.Model):
     CATEGORY_CHOICES = [
@@ -15,7 +17,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     brand = models.CharField(max_length=100, blank=True, null=True)
-    image = models.ImageField(upload_to='images/')
+    image = CloudinaryField('image')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

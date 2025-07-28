@@ -43,7 +43,9 @@ Techee is a modern and responsive e-commerce platform for electronic devices. It
 
 
 ## UML
-![UML Diagram](link-or-path-here)
+![UML Diagram](https://drive.google.com/uc?id=1vkWOg0lGrdputbjDg8ur4e8OFOmW3AtW)
+
+
 
 ## Wireframe
 ![Wireframe](link-or-path-here)

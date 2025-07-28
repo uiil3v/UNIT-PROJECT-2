@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block fileStyle %}
+<style>
+  .about-section {
+    padding: 80px 0;
+  }
+
+  .about-text h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-image {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 50px 0;
+    }
+
+    .about-text {
+      text-align: center;
+    }
+
+    .about-image {
+      margin-top: 30px;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4 px-md-5"
+style="background: linear-gradient(to right, rgb(244, 243, 243), white);">
+
+  <!-- Mission Section -->
+  <div class="row justify-content-center align-items-center about-section">
+    <div class="col-lg-6 about-text">
+      <h2>Our Mission</h2>
+      <p>
+        At Techee, our mission is to make cutting-edge technology accessible to everyone.
+        We believe shopping for electronics should be easy, exciting, and trustworthy.
+        That’s why we built a platform that delivers top-quality products, fast shipping,
+        and dedicated support — all in one place.
+      </p>
+    </div>
+    <div class="col-lg-6 about-image">
+      <img class="img-fluid" src="{% static 'images/about-mission.jpg' %}" alt="Our Mission">
+    </div>
+  </div>
+
+  <!-- Story Section -->
+  <div class="row justify-content-center align-items-center about-section flex-lg-row-reverse">
+    <div class="col-lg-6 about-text">
+      <h2>Our Story</h2>
+      <p>
+        Techee was born from a passion for technology and a desire to bridge the gap between
+        innovation and everyday users. What started as a small tech blog turned into a
+        full-fledged e-commerce platform, offering carefully curated products and a
+        seamless shopping experience. We're more than a store — we’re a community for tech lovers.
+      </p>
+    </div>
+    <div class="col-lg-6 about-image">
+      <img class="img-fluid" src="{% static 'images/about-story.jpg' %}" alt="Our Story">
+    </div>
+  </div>
+
+</div>
+{% endblock %}

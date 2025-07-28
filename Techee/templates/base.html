@@ -29,7 +29,7 @@
         <a class="text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;'
           href="{% url 'store:products_view' %}">PRODUCTS</a>
         <a class="about text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;'
-          href="">ABOUT</a>
+          href="{% url 'main:about_view' %}">ABOUT</a>
         <a class="text-decoration-none text-black" style='font-family: "Reem Kufi Fun", sans-serif;' href="{% url 'main:contact_view'%}">CONTACT</a>
       </div>
 
@@ -112,7 +112,7 @@
         class="right-son d-flex flex-row justify-content-evenly gap-5 w-50 align-items-center pt-4 pb-2 footer-padding-lg-end">
         <ul class="list-unstyled d-flex flex-column row-gap-3">
           <li><a style="font-weight: 500;" href="{% url 'main:home_view' %}">Home</a></li>
-          <li><a style="font-weight: 500;" href="">About</a></li>
+          <li><a style="font-weight: 500;" href="{% url 'main:about_view' %}">About</a></li>
           <li><a style="font-weight: 500;" href="{% url 'store:products_view' %}">Products</a></li>
           <li><a style="font-weight: 500;" href="{% url 'main:contact_view'%}">Contact</a></li>
         </ul>

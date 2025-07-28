@@ -22,3 +22,128 @@
   border-color: #000 !important;   
   box-shadow: none !important;     
 }
+
+
+/* Dark Mode */
+
+.product-page {
+  background-color: rgba(255, 255, 255, 1); 
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btns button {
+  border: none;
+  background: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.tab-btns button.active {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.95);
+}
+
+textarea.form-control:focus {
+  border-color: rgba(0, 0, 0, 1) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+body.dark-mode .product-page {
+  background-color: rgba(30, 30, 30, 1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .tab-btns button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-mode .tab-btns button.active {
+  color: rgba(255, 255, 255, 1);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode textarea.form-control:focus {
+  border-color: rgba(255, 255, 255, 1) !important;
+}
+
+body.dark-mode .text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body.dark-mode .product-page {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .product-page p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.dark-mode .product-page .text-dark {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.dark-mode .product-page .text-decoration-line-through {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+body.dark-mode form.bg-white {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark-mode textarea.form-control {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode textarea.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode form label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.dark-mode form .btn-dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+}
+
+body.dark-mode form .btn-dark:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+body.dark-mode .card {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .card h6 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
+body.dark-mode .card .btn-outline-dark {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+body.dark-mode .card .btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+}
+
+.card .price span {
+  color: rgba(195, 194, 194, 0.9) !important;
+}

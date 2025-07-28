@@ -45,8 +45,9 @@ Techee is a modern and responsive e-commerce platform for electronic devices. It
 ## UML
 ![UML Diagram](https://drive.google.com/uc?id=1vkWOg0lGrdputbjDg8ur4e8OFOmW3AtW)
 
-## Wireframe
-![Wireframe](https://www.figma.com/design/SmiNzrYRzdwJvpMmAL5LN0/Techee?node-id=0-1&t=vJbkY9qJziWghxux-1)
+## Wireframe  
+[View Wireframe on Figma](https://www.figma.com/design/SmiNzrYRzdwJvpMmAL5LN0/Techee?node-id=0-1)
+
 
 ## Additional Information
 - Bootstrap was used for styling and responsive layout.

@@ -1,1 +1,74 @@
-conatct page
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block fileStyle %}
+<style>
+    .contact-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+
+    .contact-box {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+
+    input:focus,
+    textarea:focus {
+        border: 2px solid #000 !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container contact-container ">
+    <div class="row w-100 align-items-center justify-content-between">
+        <div class="col-lg-6 mb-4 contact-text">
+            <h2>Contact us</h2>
+            <p>
+                Have a question or need help? Fill out the form and we’ll get back to you shortly —
+                or reach out directly through the <a href="#">department email</a>.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <div class="contact-box">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">First name*</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Last name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email*</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">What can we help you with?</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

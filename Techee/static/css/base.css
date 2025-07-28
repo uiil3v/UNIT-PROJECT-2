@@ -215,15 +215,12 @@ header a h2:hover {
         width: 230px !important;
     }
 
-    header .father .a-options .about {
-        display: none;
-    }
 
 }
 
 @media (max-width:460px){
     .a-options { 
-        left: 140px;
+        /* left: 140px; */
         width: 210px !important;
     }
 

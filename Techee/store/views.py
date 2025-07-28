@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import user_passes_test
 
 def products_view(request: HttpRequest):
     all_products = Product.objects.all()
+ 
 
     search_query = request.GET.get("search")
     if search_query:

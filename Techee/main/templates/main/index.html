@@ -25,22 +25,30 @@
             <h1>Explore Our Categories</h1>
         </div>
         <div style="background-color: #f8f7f7;" class="phones-div">
-            <a href="{% url 'store:products_view' %}?category=phones"><h2>Phones</h2></a>
+            <a href="{% url 'store:products_view' %}?category=phones">
+                <h2>Phones</h2>
+            </a>
             <img src="{% static 'images/iphones15.png' %}" alt="Phones">
         </div>
         <div style="background-color: #efeeee;" class="laptops-div">
-            <a href="{% url 'store:products_view' %}?category=laptops"><h2>Laptops</h2></a>
+            <a href="{% url 'store:products_view' %}?category=laptops">
+                <h2>Laptops</h2>
+            </a>
             <img src="{% static 'images/macbooks.png' %}" alt="Laptops">
         </div>
         <div style="background-color: #e4e4e4;" class="watches-div">
-            <a href="{% url 'store:products_view' %}?category=watches"><h2>Watches</h2></a>
+            <a href="{% url 'store:products_view' %}?category=watches">
+                <h2>Watches</h2>
+            </a>
             <img src="{% static 'images/watches.png' %}" alt="Watches">
         </div>
         <div style="background-color: #dbdbdb;" class="airpods-div">
-            <a href="{% url 'store:products_view' %}?category=headphones"><h2>Airpods</h2></a>
+            <a href="{% url 'store:products_view' %}?category=headphones">
+                <h2>Airpods</h2>
+            </a>
             <img src="{% static 'images/airpods.png' %}" alt="Headphones">
         </div>
-        
+
 
     </div>
 
@@ -50,8 +58,7 @@
 
         <div class="cards">
             <div>
-                <img src="{% static 'images/high-quality.png' %}" alt="Quality Image"
-                style="margin-bottom: 10px;">
+                <img src="{% static 'images/high-quality.png' %}" alt="Quality Image" style="margin-bottom: 10px;">
                 <h3>High Quality</h3>
                 <p>We deliver reliable, top-tier quality you can trust — every time.</p>
             </div>
@@ -80,15 +87,7 @@
                 <h3>Honesty</h3>
                 <p>We operate with full transparency, honesty, and trust.</p>
             </div>
-
-
         </div>
-
-
-
     </div>
-    
-
 </div>
 {% endblock %}
-

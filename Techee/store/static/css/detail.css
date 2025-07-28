@@ -17,3 +17,8 @@
     border-bottom: 3px solid black;
     color: black;
   }
+
+  textarea.form-control:focus {
+  border-color: #000 !important;   
+  box-shadow: none !important;     
+}

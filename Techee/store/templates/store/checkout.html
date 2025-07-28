@@ -7,10 +7,10 @@
 
   <ul class="list-group mb-3">
     {% for entry in cart_items %}
-      <li class="list-group-item d-flex justify-content-between">
-        <div>{{ entry.item.product.name }} (x{{ entry.item.quantity }})</div>
-        <div>{{ entry.subtotal|floatformat:2 }} SAR</div>
-      </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <div>{{ entry.item.product.name }} (x{{ entry.item.quantity }})</div>
+      <div>{{ entry.subtotal|floatformat:2 }} SAR</div>
+    </li>
     {% endfor %}
   </ul>
 

@@ -51,7 +51,7 @@
     border-radius: 10px;
     font-weight: 500;
     z-index: 0;
-    background: linear-gradient(45deg,  black, rgb(70, 69, 69),  rgb(172, 172, 172));
+    background: linear-gradient(45deg,  black, rgb(70, 69, 69),  rgb(236, 235, 235));
     transition: 0.4s ;
 }
 
@@ -760,6 +760,3 @@
     width: 100px;
 
 }
-
-
-

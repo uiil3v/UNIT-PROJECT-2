@@ -1,0 +1,61 @@
+.dark-mode body {
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .table {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .table thead.table-dark th {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .table td {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark-mode input[type="number"] {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode input[type="number"]:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .btn-outline-dark {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .btn-success {
+  background-color: rgba(0, 255, 100, 0.2);
+  border: none;
+  color: white;
+}
+
+.dark-mode .btn-success:hover {
+  background-color: rgba(0, 255, 100, 0.4);
+}
+
+.dark-mode .text-muted {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark-mode h2,
+.dark-mode h4 {
+  color: rgba(255, 255, 255, 0.95);
+}

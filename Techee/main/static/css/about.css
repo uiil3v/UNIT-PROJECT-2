@@ -37,3 +37,20 @@
       margin-top: 30px;
     }
   }
+
+
+  /* Dark Mode */
+
+body.dark-mode .about-section {
+  background: linear-gradient(to right, #121212, #1c1c1c);
+}
+
+body.dark-mode .about-text h2,
+body.dark-mode .about-text p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .about-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}

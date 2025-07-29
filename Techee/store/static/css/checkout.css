@@ -1,24 +1,26 @@
-/* Dark mode */
-.list-group-item {
+/* dark mode */
+body.dark-mode .checkout-page h2,
+body.dark-mode .checkout-page h4 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .checkout-page .list-group-item {
   background-color: rgba(255, 255, 255, 0.03);
   color: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.list-group-item div {
+body.dark-mode .checkout-page .list-group-item div {
   color: rgba(255, 255, 255, 0.85);
 }
 
-h2, h4 {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.btn-dark {
+body.dark-mode .checkout-page .btn-dark {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-dark:hover {
+body.dark-mode .checkout-page .btn-dark:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
+

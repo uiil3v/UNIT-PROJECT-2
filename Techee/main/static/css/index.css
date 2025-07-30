@@ -51,7 +51,7 @@
     border-radius: 10px;
     font-weight: 500;
     z-index: 0;
-    background: linear-gradient(45deg,  black, rgb(70, 69, 69),  rgb(187, 186, 186));
+    background-color: black;
     transition: 0.4s ;
 }
 
@@ -164,7 +164,7 @@
         top: 40px;
     }
     .index-main .index-main-1 .iphone {
-        bottom: -100px;
+        bottom: -140px;
         width: 450px;
     }
 
@@ -180,7 +180,7 @@
     }
 
     .index-main .index-main-1 .iphone {
-        bottom: 0px;
+        bottom: -40px;
         width: 300px;
     }
 
@@ -193,7 +193,7 @@
     }
 
     .index-main .index-main-1 .iphone {
-        bottom: 0px;
+        bottom: -40px;
         width: 400px;
     }
 

@@ -72,6 +72,8 @@ def add_view(request: HttpRequest):
         if form.is_valid():
             form.save()
             return redirect("store:products_view")
+        else:
+            print(form.errors)  # <== أضف هذا للسيرفر المحلي
     else:
         form = ProductForm()
     return render(request, "store/add.html", {"form": form})

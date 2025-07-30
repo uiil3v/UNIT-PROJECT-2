@@ -15,7 +15,6 @@ import os
 import cloudinary
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 
@@ -26,6 +25,10 @@ cloudinary.config(
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CSRF_TRUSTED_ORIGINS = [
+    "https://techee-production.up.railway.app",
+    "http://127.0.0.1"  
+]
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUD_NAME'),

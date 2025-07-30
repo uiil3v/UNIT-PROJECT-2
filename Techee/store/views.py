@@ -70,13 +70,25 @@ def add_view(request: HttpRequest):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect("store:products_view")
+            try:
+                form.save()
+                return redirect("store:products_view")
+            except Exception as e:
+                print("❌ Error during form.save():", e)  # يظهر في logs على Railway
+                return render(request, "store/add.html", {
+                    "form": form,
+                    "error": f"Something went wrong: {str(e)}"
+                })
         else:
-            print(form.errors)  # <== أضف هذا للسيرفر المحلي
+            print("❌ Form validation errors:", form.errors)
+            return render(request, "store/add.html", {
+                "form": form,
+                "error": "Form validation failed. Please check your inputs."
+            })
     else:
         form = ProductForm()
     return render(request, "store/add.html", {"form": form})
+
 
 
 @user_passes_test(lambda u: u.is_staff)

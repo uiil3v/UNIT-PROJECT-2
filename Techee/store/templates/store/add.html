@@ -17,6 +17,10 @@
 
   <h2 class="text-center fw-bold mb-5">Add New Product</h2>
 
+
+  {% if error %}
+  <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
   <form method="POST" enctype="multipart/form-data" class="row g-4">
     {% csrf_token %}
 

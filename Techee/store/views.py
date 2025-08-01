@@ -74,7 +74,7 @@ def add_view(request: HttpRequest):
                 form.save()
                 return redirect("store:products_view")
             except Exception as e:
-                print("❌ Error during form.save():", e)  # يظهر في logs على Railway
+                print("❌ Error during form.save():", e)  
                 return render(request, "store/add.html", {
                     "form": form,
                     "error": f"Something went wrong: {str(e)}"

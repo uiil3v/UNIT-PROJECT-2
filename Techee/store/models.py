@@ -19,6 +19,7 @@ class Product(models.Model):
     brand = models.CharField(max_length=100, blank=True, null=True)
     image = CloudinaryField('image')
     created_at = models.DateTimeField(auto_now_add=True)
+    stock = models.PositiveBigIntegerField(default=0)
 
     def __str__(self):
         return f"{self.name} - {self.price} SAR"

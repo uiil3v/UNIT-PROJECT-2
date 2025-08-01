@@ -8,6 +8,14 @@
 
 {% block content %}
 <div class="container py-5">
+
+
+  {% if error %}
+  <div class="alert alert-danger text-center">
+    {{ error }}
+  </div>
+  {% endif %}
+
   <h2 class="fw-bold mb-4">Confirm Your Order</h2>
 
   <ul class="list-group mb-3">

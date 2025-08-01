@@ -182,6 +182,7 @@ def clear_cart_view(request):
 def checkout_view(request):
     cart = get_object_or_404(Cart, user=request.user)
     cart_items = cart.items.select_related('product')
+    
 
     items_with_subtotal = []
     total = 0
@@ -194,8 +195,22 @@ def checkout_view(request):
         })
 
     if request.method == "POST":
+        for item in cart_items:
+            product = item.product
+            if product.stock >= item.quantity:
+                product.stock -= item.quantity
+                product.save()
+            else:
+                return render(request, "store/checkout.html", {
+                    'cart_items': items_with_subtotal,
+                    'total': total,
+                    'error': f"Sorry, only {product.stock} left of {product.name}."
+                })
+                
         cart.items.all().delete()
         return redirect("store:thank_you_view")
+                
+            
 
     return render(request, "store/checkout.html", {
         'cart_items': items_with_subtotal,

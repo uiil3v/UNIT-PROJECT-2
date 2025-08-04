@@ -3,10 +3,11 @@ from django.http import HttpRequest
 from .models import Product, Cart, CartItem
 from .forms import ProductForm, CommentForm
 from django.core.paginator import Paginator
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from orders.models import Order
+
 
 
 
@@ -46,6 +47,9 @@ def detail_view(request: HttpRequest, product_id: int):
     comments = product.comments.order_by('-created_at')
     
     
+    average_rating = product.comments.aggregate(avg_rating=Avg('rating'))['avg_rating'] or 0
+    average_rating = round(float(average_rating))
+    
     
     has_purchased = False
     if request.user.is_authenticated:
@@ -76,7 +80,10 @@ def detail_view(request: HttpRequest, product_id: int):
         "comments": comments,
         "form": form,
         "has_purchased": has_purchased,
+        "average_rating": average_rating,
     })
+
+
 
 @user_passes_test(lambda u: u.is_staff)
 def add_view(request: HttpRequest):
@@ -115,6 +122,7 @@ def update_view(request, product_id):
     else:
         form = ProductForm(instance=product)
     return render(request, "store/update.html", {"form": form, "product": product})
+
 
 
 @user_passes_test(lambda u: u.is_staff)

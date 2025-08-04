@@ -89,12 +89,25 @@
     <form method="post" class="bg-white p-4 rounded-3 mx-auto" style="max-width: 1100px;">
       {% csrf_token %}
       <div class="mb-3">
-        <label for="content" class="form-label fw-semibold">Comment</label>
-        <textarea name="content" id="content" rows="4" class="form-control" placeholder="Write your comment here..."
-          required></textarea>
+        <label for="rating" class="form-label fw-semibold">Rating</label>
+        <select name="rating" id="rating" class="form-select" required>
+          <option value="" selected disabled>Choose a rating</option>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="1">⭐</option>
+        </select>
       </div>
+
+      <div class="mb-3">
+        <label for="content" class="form-label fw-semibold">Comment</label>
+        <textarea name="content" id="content" rows="4" class="form-control" placeholder="Write your comment here..." required></textarea>
+      </div>
+      
       <button type="submit" class="btn btn-dark w-100 mt-3">Add Comment</button>
     </form>
+
   </div>
   {% else %}
   <p style="margin-top: 50px;" class="text-center fw-bolder"><a href="{% url 'users:login_view' %}">Login</a> to leave a
@@ -112,10 +125,22 @@
           <h6 class="card-title mb-0">{{ comment.user.username }}</h6>
           <small class="text-muted">{{ comment.created_at|date:"M d, Y" }}</small>
         </div>
+
+        <div class="mb-2 text-warning">
+          {% for i in "12345" %}
+            {% if i|add:"0" <= comment.rating %}
+              <i class="fa fa-star" style="font-size: 14px; color: #ffc107;"></i>
+            {% else %}
+              <i class="fa fa-star text-muted"></i>
+            {% endif %}
+          {% endfor %}
+        </div>
+
         <p class="card-text">{{ comment.content }}</p>
       </div>
     </div>
     {% endfor %}
+
     {% else %}
     <div class="alert alert-info text-center">No reviews yet. Be the first to review this product!</div>
     {% endif %}

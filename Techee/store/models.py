@@ -26,8 +26,18 @@ class Product(models.Model):
 
 
 class Comment(models.Model):
+    
+    RATING_CHOICES = [
+        (1, '⭐ - Poor'),
+        (2, '⭐⭐ - Fair'),
+        (3, '⭐⭐⭐ - Good'),
+        (4, '⭐⭐⭐⭐ - Very Good'),
+        (5, '⭐⭐⭐⭐⭐ - Excellent'),
+    ]
+    
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.IntegerField(choices=RATING_CHOICES, null=True, blank=True)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

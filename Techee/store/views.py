@@ -11,8 +11,15 @@ from orders.models import Order
 
 
 
+
 def products_view(request: HttpRequest):
-    all_products = Product.objects.all()
+    all_products = Product.objects.all().annotate(avg_rating=Avg('comments__rating')) 
+    
+    for product in all_products:
+        if product.avg_rating is not None:
+            product.avg_rating = round(float(product.avg_rating)) 
+        else:
+            product.avg_rating = 0 
  
 
     search_query = request.GET.get("search")

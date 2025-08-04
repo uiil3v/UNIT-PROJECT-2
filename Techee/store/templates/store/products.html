@@ -5,6 +5,7 @@
 
 {% block fileStyle %}
 <link rel="stylesheet" href="{% static 'css/products.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %}
@@ -75,9 +76,19 @@
       <p class="fw-bold mb-2">{{ product.price }} SAR</p>
 
       
-      <div class="mb-3 text-warning">
-        ★★★★★
+      <div class="mb-3 text-warning d-flex align-items-center gap-2">
+        {% for i in "12345" %}
+          {% if forloop.counter <= product.avg_rating %}
+            <i class="fa-solid fa-star" style="font-size: 18px; color: #ffc107;"></i>
+          {% elif forloop.counter == product.avg_rating|add:"0.5" %}
+            <i class="fa-solid fa-star-half-stroke" style="font-size: 18px; color: #ffc107;"></i>
+          {% else %}
+            <i class="fa-regular fa-star text-muted" style="font-size: 18px;"></i>
+          {% endif %}
+        {% endfor %}
+        <span class="text-muted fs-6">({{ product.comments.count }} reviews)</span>
       </div>
+
 
       
           <div class="d-flex gap-2 mt-auto">

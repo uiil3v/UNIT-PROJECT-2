@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
+from orders.models import Order
 
 
 
@@ -43,9 +44,20 @@ def detail_view(request: HttpRequest, product_id: int):
     relevant_products = Product.objects.filter(category=product.category).exclude(id=product.id)[:4]
 
     comments = product.comments.order_by('-created_at')
+    
+    
+    
+    has_purchased = False
+    if request.user.is_authenticated:
+        has_purchased = Order.objects.filter(
+            user=request.user,
+            product=product,
+            status='completed'
+        ).exists()
 
+    
     if request.method == "POST":
-        if request.user.is_authenticated:
+        if request.user.is_authenticated and has_purchased:
             form = CommentForm(request.POST)
             if form.is_valid():
                 comment = form.save(commit=False)
@@ -63,6 +75,7 @@ def detail_view(request: HttpRequest, product_id: int):
         "relevant_products": relevant_products,
         "comments": comments,
         "form": form,
+        "has_purchased": has_purchased,
     })
 
 @user_passes_test(lambda u: u.is_staff)
@@ -200,6 +213,13 @@ def checkout_view(request):
             if product.stock >= item.quantity:
                 product.stock -= item.quantity
                 product.save()
+                
+                Order.objects.create(
+                    user=request.user,
+                    product=product,
+                    quantity=item.quantity, 
+                    status='completed',
+                )
             else:
                 return render(request, "store/checkout.html", {
                     'cart_items': items_with_subtotal,

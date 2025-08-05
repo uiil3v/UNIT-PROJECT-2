@@ -147,3 +147,28 @@ body.dark-mode .card .btn-outline-dark:hover {
 .card .price span {
   color: rgba(137, 136, 136, 0.9) !important;
 }
+
+
+/* تبويبات Bootstrap في الوضع الداكن */
+body.dark-mode .nav-tabs {
+  border-bottom: 1px solid #777;
+}
+
+body.dark-mode .nav-tabs .nav-link {
+  color: #ccc;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+body.dark-mode .nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #333; /* أو استخدم نفس خلفية البلوك */
+  border: 1px solid #555;
+  border-bottom-color: transparent;
+  border-radius: 5px 5px 0 0;
+}
+
+body.dark-mode #delivery p {
+    color: white !important; 
+  }

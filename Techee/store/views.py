@@ -46,17 +46,20 @@ def products_view(request: HttpRequest):
     return render(request, "store/products.html", {"products": page_obj})
 
 
-
 def detail_view(request: HttpRequest, product_id: int):
+    
     product = get_object_or_404(Product, id=product_id)
     relevant_products = Product.objects.filter(category=product.category).exclude(id=product.id)[:4]
 
+    # حساب تقييم كل منتج مشابه
+    for item in relevant_products:
+        avg = item.comments.aggregate(avg_rating=Avg('rating'))['avg_rating'] or 0
+        item.avg_rating = round(float(avg))
+
     comments = product.comments.order_by('-created_at')
-    
     
     average_rating = product.comments.aggregate(avg_rating=Avg('rating'))['avg_rating'] or 0
     average_rating = round(float(average_rating))
-    
     
     has_purchased = False
     if request.user.is_authenticated:
@@ -66,7 +69,6 @@ def detail_view(request: HttpRequest, product_id: int):
             status='completed'
         ).exists()
 
-    
     if request.method == "POST":
         if request.user.is_authenticated and has_purchased:
             form = CommentForm(request.POST)
@@ -89,7 +91,6 @@ def detail_view(request: HttpRequest, product_id: int):
         "has_purchased": has_purchased,
         "average_rating": average_rating,
     })
-
 
 
 @user_passes_test(lambda u: u.is_staff)

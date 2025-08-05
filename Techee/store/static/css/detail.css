@@ -144,8 +144,9 @@ body.dark-mode .card .btn-outline-dark:hover {
   color: black;
 }
 
-.card .price span {
-  color: rgba(137, 136, 136, 0.9) !important;
+body.dark-mode .card .price span {
+  color: rgba(207, 206, 206, 0.9) !important;
+  font-weight: 400 !important;
 }
 
 

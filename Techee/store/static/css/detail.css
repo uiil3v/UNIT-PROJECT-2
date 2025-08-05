@@ -186,6 +186,6 @@ body.dark-mode select.form-select:focus {
 }
 
 select.form-select option:hover {
-  background-color: #d4d2d2 !important; /* رمادي فاتح */
-  color: #000; /* تأكد اللون يكون واضح */
+  background-color: #d4d2d2 !important; 
+  color: #000; 
 }

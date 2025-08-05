@@ -85,3 +85,14 @@ body.dark-mode .pagination .page-item.active .page-link {
   color: rgba(0, 0, 0, 1);
   border-color: rgba(255, 255, 255, 1);
 }
+
+
+
+body.dark-mode .fa-regular{
+  color: white !important;
+}
+
+
+body.dark-mode .text-muted {
+  color: white !important;
+}

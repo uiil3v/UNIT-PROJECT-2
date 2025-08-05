@@ -5,105 +5,107 @@
 
 {% block fileStyle %}
 <link rel="stylesheet" href="{% static 'css/products.css' %}">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
 
 <section class="products-page container py-5 min-vh-100  rounded-4 my-5 shadow-lg">
 
-  
+
 
   {% if request.user.is_authenticated and request.user.is_staff %}
-    <div class="text-center mb-4">
-      <a href="{% url 'store:add_view' %}" class="btn btn-outline-dark px-5">+ Add New Product</a>
-    </div>
+  <div class="text-center mb-4">
+    <a href="{% url 'store:add_view' %}" class="btn btn-outline-dark px-5">+ Add New Product</a>
+  </div>
   {% endif %}
-  
+
   <h2 class="text-center fw-bold mb-4">Explore Our Products</h2>
 
-  
-
-  
-<form method="GET" class="row g-3 mb-5 justify-content-center">
-
-  
-  <div class="col-12 col-md-5">
-    <input type="text" name="search" class="form-control" placeholder="Search products..." value="{{ request.GET.search }}">
-  </div>
-
- 
-  <div class="col-6 col-md-2">
-    <select class="form-select" name="category">
-      <option value="" {% if not request.GET.category %}selected{% endif %}>All Categories</option>
-      <option value="phones" {% if request.GET.category == 'phones' %}selected{% endif %}>Phones</option>
-      <option value="laptops" {% if request.GET.category == 'laptops' %}selected{% endif %}>Laptops</option>
-      <option value="headphones" {% if request.GET.category == 'headphones' %}selected{% endif %}>Headphones</option>
-      <option value="watches" {% if request.GET.category == 'watches' %}selected{% endif %}>Watches</option>
-      <option value="tablets" {% if request.GET.category == 'tablets' %}selected{% endif %}>Tablets</option>
-    </select>
-
-  </div>
-
-  
-  <div class="col-6 col-md-2">
-    <select class="form-select" name="price">
-      <option value="" {% if not request.GET.price %}selected{% endif %}>All Prices</option>
-      <option value="low-high" {% if request.GET.price == 'low-high' %}selected{% endif %}>Low to High</option>
-      <option value="high-low" {% if request.GET.price == 'high-low' %}selected{% endif %}>High to Low</option>
-    </select>
-  </div>
-
-  
-  <div class="col-12 col-md-2">
-    <button type="submit" class="btn btn-dark w-100">Search</button>
-  </div>
-
-</form>
 
 
 
-  
+  <form method="GET" class="row g-3 mb-5 justify-content-center">
+
+
+    <div class="col-12 col-md-5">
+      <input type="text" name="search" class="form-control" placeholder="Search products..."
+        value="{{ request.GET.search }}">
+    </div>
+
+
+    <div class="col-6 col-md-2">
+      <select class="form-select" name="category">
+        <option value="" {% if not request.GET.category %}selected{% endif %}>All Categories</option>
+        <option value="phones" {% if request.GET.category == "phones" %}selected{% endif %}>Phones</option>
+        <option value="laptops" {% if request.GET.category == "laptops" %}selected{% endif %}>Laptops</option>
+        <option value="headphones" {% if request.GET.category == "headphones" %}selected{% endif %}>Headphones</option>
+        <option value="watches" {% if request.GET.category == 'watches' %}selected{% endif %}>Watches</option>
+        <option value="tablets" {% if request.GET.category == 'tablets' %}selected{% endif %}>Tablets</option>
+      </select>
+
+    </div>
+
+
+    <div class="col-6 col-md-2">
+      <select class="form-select" name="price">
+        <option value="" {% if not request.GET.price %}selected{% endif %}>All Prices</option>
+        <option value="low-high" {% if request.GET.price == 'low-high' %}selected{% endif %}>Low to High</option>
+        <option value="high-low" {% if request.GET.price == 'high-low' %}selected{% endif %}>High to Low</option>
+      </select>
+    </div>
+
+
+    <div class="col-12 col-md-2">
+      <button type="submit" class="btn btn-dark w-100">Search</button>
+    </div>
+
+  </form>
+
+
+
+
   <div class="row g-4 justify-content-center">
     {% for product in products %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-  <div class="card h-100 shadow border-0 rounded-4 overflow-hidden">
-    <img src="{{ product.image.url }}" class="card-img-top p-3" alt="{{ product.name }}" style="height: 200px; object-fit: contain;">
+      <div class="card h-100 shadow border-0 rounded-4 overflow-hidden">
+        <img src="{{ product.image.url }}" class="card-img-top p-3" alt="{{ product.name }}"
+          style="height: 200px; object-fit: contain;">
 
-    <div class="card-body d-flex flex-column justify-content-between text-start px-4 pb-4">
-      <h5 class="card-title fw-bold">{{ product.name }}</h5>
-      <p class="card-text text-muted small">{{ product.description|truncatewords:10 }}</p>
-      <p class="fw-bold mb-2">{{ product.price }} SAR</p>
-
-      
-      <div class="mb-3 text-warning d-flex align-items-center gap-2">
-        {% for i in "12345" %}
-          {% if forloop.counter <= product.avg_rating %}
-            <i class="fa-solid fa-star" style="font-size: 18px; color: #ffc107;"></i>
-          {% elif forloop.counter == product.avg_rating|add:"0.5" %}
-            <i class="fa-solid fa-star-half-stroke" style="font-size: 18px; color: #ffc107;"></i>
-          {% else %}
-            <i class="fa-regular fa-star text-muted" style="font-size: 18px;"></i>
-          {% endif %}
-        {% endfor %}
-        <span class="text-muted fs-6">({{ product.comments.count }} reviews)</span>
-      </div>
+        <div class="card-body d-flex flex-column justify-content-between text-start px-4 pb-4">
+          <h5 class="card-title fw-bold">{{ product.name }}</h5>
+          <p class="card-text text-muted small mb-2">{{ product.description|truncatewords:10 }}</p>
+          <p class="fw-bold mb-2">{{ product.price }} SAR</p>
 
 
-      
+          <div class="mb-3 text-warning d-flex align-items-center gap-2">
+            {% for i in "12345" %}
+            {% if forloop.counter <= product.avg_rating %} 
+              <i class="fa-solid fa-star" style="font-size: 14px; color: #ffc107;"></i>
+              {% elif forloop.counter == product.avg_rating|add:"0.5" %}
+              <i class="fa-solid fa-star-half-stroke" style="font-size: 14px; color: #ffc107;"></i>
+              {% else %}
+              <i class="fa-regular fa-star text-muted" style="font-size: 14px;"></i>
+              {% endif %}
+              {% endfor %}
+              <span class="text-muted" style="font-size: 14px;">({{ product.comments.count }} reviews)</span>
+          </div>
+
+
+
           <div class="d-flex gap-2 mt-auto">
-      <a href="{% url 'store:detail_view' product.id %}" class="btn btn-outline-dark w-50">View Details</a>
+            <a href="{% url 'store:detail_view' product.id %}" class="btn btn-outline-dark w-50">View Details</a>
 
-      {% if product.stock > 0 %}
-        {% if request.user.is_authenticated %}
-          <a href="{% url 'store:add_to_cart_view' product.id %}" class="btn btn-dark">Add to Cart</a>
-        {% else %}
-          <a href="{% url 'users:login_view' %}" class="btn btn-outline-dark">Login to Add</a>
-        {% endif %}
-      {% else %}
-        <button class="btn btn-secondary" disabled>Out of Stock</button>
-      {% endif %}
-    </div>
+            {% if product.stock > 0 %}
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'store:add_to_cart_view' product.id %}" class="btn btn-dark">Add to Cart</a>
+            {% else %}
+            <a href="{% url 'users:login_view' %}" class="btn btn-outline-dark">Login to Add</a>
+            {% endif %}
+            {% else %}
+            <button class="btn btn-secondary" disabled>Out of Stock</button>
+            {% endif %}
+          </div>
 
         </div>
       </div>
@@ -114,7 +116,7 @@
     {% endfor %}
   </div>
 
-  
+
   {% if products.has_other_pages %}
   <div class="d-flex justify-content-center mt-5">
     <nav>
@@ -131,15 +133,15 @@
         {% endif %}
 
         {% for num in products.paginator.page_range %}
-          {% if num == products.number %}
-            <li class="page-item active">
-              <span class="page-link">{{ num }}</span>
-            </li>
-          {% else %}
-            <li class="page-item">
-              <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-            </li>
-          {% endif %}
+        {% if num == products.number %}
+        <li class="page-item active">
+          <span class="page-link">{{ num }}</span>
+        </li>
+        {% else %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+        </li>
+        {% endif %}
         {% endfor %}
 
         {% if products.has_next %}
